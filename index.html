@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Motivation App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      padding: 40px;
+      border-radius: 20px;
+      width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ffcc00;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #ffaa00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Random Motivation App 🚀</h1>
+    <p id="quote">Clique sur le bouton pour recevoir une motivation.</p>
+    <button onclick="generateQuote()">Nouvelle citation</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Chaque expert a commencé débutant.",
+      "N'abandonne pas, tu es plus proche que tu ne le penses.",
+      "La discipline bat la motivation.",
+      "Un petit progrès chaque jour mène à de grands résultats.",
+      "Tu peux apprendre Docker, Git, Linux et devenir très forte."
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
